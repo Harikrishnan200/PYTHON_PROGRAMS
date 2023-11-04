@@ -26,7 +26,7 @@ def RockPaperScissor(user,comp,user_score,comp_score): #This function is used to
         print("Tie!")
         user_score.append("Tie!")             #result of each phase is stored in both list to find the winner
         comp_score.append("Tie")
-    elif (user == "Paper" and comp == "Rock") or (user == "Rock" and comp == "Scissor") or (user == "Scissor" and comp == "Paper"):
+    elif (user == "Paper" and comp == "Stone") or (user == "Stone" and comp == "Scissor") or (user == "Scissor" and comp == "Paper"):
         print()
         print(user_score[0]+" Wins")
         user_score.append("Win")              #result of each phase is stored in both list to find the winner
@@ -74,13 +74,13 @@ def main():
     name = input("\nEnter player name:")
     print("Instruction: There are total 5 chances and whoever gets the highest score will win.")
     n = 0
-    rps_list = ["Rock","Paper","Scissor"]
+    rps_list = ["Stone","Paper","Scissor"]
     user_score = [name]     #user_score is a list used to store the user score and the first item of list is assigned with player name for the printing the name on score board
     comp_score = ["Comp"]   #comp_score is a list used to store the computer score the first item of list is assigned with "comp" for printing that name on score board
     chance = ["Numb"]       #chance is a list used to count the no. of chance
     while n !=5 :
         comp_choice = random.choice(rps_list)
-        print("1.Rock \n2.Paper \n3.Scissor \n4.Exit")
+        print("1.Stone \n2.Paper \n3.Scissor \n4.Exit")
         user_input = int(input("\nEnter your choice:"))
         user_choice = rps_list[user_input-1]
         RockPaperScissor(user_choice,comp_choice,user_score,comp_score)
