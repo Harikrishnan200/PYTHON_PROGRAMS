@@ -37,8 +37,8 @@ def RockPaperScissor(user,comp,user_score,comp_score): #This function is used to
         user_score.append("Fail") 
         comp_score.append("Win")   
 
-           
-    print("\nUser:"+user ,"computer:"+comp)     #print the result of each phase
+    print()       
+    print(f'{user_score[0]}'+":"+user ,"\ncomputer:"+comp)     #print the result of each phase
     print()
 
 def displayScoreBoard(user_score,comp_score,chance):
@@ -77,10 +77,10 @@ def main():
     rps_list = ["Stone","Paper","Scissor"]
     user_score = [name]     #user_score is a list used to store the user score and the first item of list is assigned with player name for the printing the name on score board
     comp_score = ["Comp"]   #comp_score is a list used to store the computer score the first item of list is assigned with "comp" for printing that name on score board
-    chance = ["Numb"]       #chance is a list used to count the no. of chance
+    chance = ["Phases"]       #chance is a list used to count the no. of chance
     while n !=5 :
         comp_choice = random.choice(rps_list)
-        print("1.Stone \n2.Paper \n3.Scissor \n4.Exit")
+        print("\n1.Stone \n2.Paper \n3.Scissor \n4.Exit")
         user_input = int(input("\nEnter your choice:"))
         if user_input == 4 :
             exit()
