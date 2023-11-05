@@ -63,9 +63,9 @@ def displayScoreBoard(user_score,comp_score,chance):
 
     for i in range(1,6):
         if comp_score[i] == "Win":
-            c_winCount = c_winCount+1
+            c_winCount += 1
         if user_score[i] == "Win":
-            u_winCount = u_winCount+1
+            u_winCount += 1
     
     winner(c_winCount,u_winCount,user_score)                
 
@@ -82,9 +82,16 @@ def main():
         comp_choice = random.choice(rps_list)
         print("1.Stone \n2.Paper \n3.Scissor \n4.Exit")
         user_input = int(input("\nEnter your choice:"))
-        user_choice = rps_list[user_input-1]
-        RockPaperScissor(user_choice,comp_choice,user_score,comp_score)
-        n +=1
+        if user_input == 4 :
+            exit()
+
+        elif user_input != 0 and  user_input <5 :    
+            user_choice = rps_list[user_input-1]
+            RockPaperScissor(user_choice,comp_choice,user_score,comp_score)
+            n +=1
+
+        else:
+            continue    
     else:
         displayScoreBoard(user_score,comp_score,chance)
 
